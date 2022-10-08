@@ -12,11 +12,11 @@
 1.2.2 Richtiges Buildtool auswählen (in unserem Fall Maven)  
 1.2.3 Projekt importieren, Meldungen akzeptieren  
 1.2.4 Neuen "Run/Debug" Schritt hinzufügen  
-![Edit Configurations Location](../img/edit_configurations.png)
+![Edit Configurations Location](img/edit_configurations.png)
 1.2.5  Spring Boot Konfiguration hinzufügen  
 1.2.5.1 Richtige Java Version einstellen  
 1.2.5.2 Klasse mit der main Methode auswählen
-![Spring Boot Configuration Example](../img/Sprint_boot_configuration.png)
+![Spring Boot Configuration Example](img/Sprint_boot_configuration.png)
 1.2.6 Speichern und die Konfiguration mit dem grünen Pfeil starten  
 1.2.7 Spring Boot Application sollte jetzt starten
 
