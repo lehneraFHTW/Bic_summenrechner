@@ -102,6 +102,40 @@ git push origin
 
 git push origin --tags
 ```
+## 6 Java Version nachträglich ändern
 
+Um die Java SDK Version nachträglich zu ändern müssen folgende Schritte durchgeführt werden:
+1. Unter File - Project Structure (Ctrl+Alt+Shif+S) eine andere JDK Version auswählen, die bereits heruntergeladen ist,
+oder über das Plus Symbol eine neue SDK hinzufügen/herunterladen.
+2. Im pom.xml File im root Verzeichnis des Projektes folgenden xml Einträge verändern
+```xml
+<properties>
+        <java.version>11</java.version> //Die Major Nummer z.B. 9,11, etc. hier eintragen und die Datei speichern
+    </properties>
+```
+3. In den Run/Debug Configurations (Obere Zeile in IntelliJ mit dem PlayButton, etc.) ebenfalls die zu benutzende JDK
+Version bei den einzelnen Configurations anpassen.
+![Edit Configurations Location](img/edit_configurations.png)
+-------
+![Spring Boot Configuration Example](img/Sprint_boot_configuration.png)
+4. Über die Maven Integration in IntelliJ einmal den Lifecylce Step "clean" ausführen und danach "compile".
+![Maven Lifecycle](img/Maven_Lifecycle.png)
+5. Im Idealfall hat der Versionswechsel funktioniert und das Programm kann wieder ausgeführt werden. Wenn nicht, muss
+der spezfischen Fehlermeldung, mit der Suchmaschine der Wahl, weiter verfolgt werden.
 
-
+# 7 Ausführen der .jar Datei
+Um die .jar Datei, die via Github Actions erstellt wird lokal ausführen zu können, sind folgende Schritte nötig.
+1. Java Runtime muss auf dem Zielsystem installiert sein (In der JDK ist die JRE dabei, also sollte es auf euren )
+Notebooks kein Problem geben. Überprüfen könnt ihr es, in dem ihr in einer Kommandozeile java --version eingebt
+und eine Versionsnummer als Antwort bekommt)
+2. Die Datei von Github herunterladen und das .zip entpacken
+3. Eine Kommandozeile öffnen, die den Pfad zur Datei bereits geöffnet hat. (Tip: Wenn im Fileexplorer der entsprechende
+Ordner geöffnet ist, kann man in die Pfadzeile einfach "cmd" schreiben, und ein Command Prompt erscheint mit dem
+aktuellen Pfad)
+![CMD über File Explorer öffnen](img/cmd_ueber_filexplorer_oeffnen.png)
+4. Folgenden Befehl ausführen
+``` 
+java -jar Datei.jar
+```
+5. Danach sollte der Start der Applikation in der Kommandozeile nachvollziehbar sein. Wenn die Applikation gestartet ist,
+kann die Schnittstelle über den Browser, ein API-Testing Tool, etc. aufgerufen werden.
